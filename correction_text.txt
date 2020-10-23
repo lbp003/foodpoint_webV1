@@ -1,0 +1,26 @@
+Live Update:
+-----------
+
+Commit ID's: d063313b - 3fe54eab
+
+
+Query:
+-------
+
+ALTER TABLE `restaurant` ADD `is_free` ENUM ('0', '1') DEFAULT '1' AFTER `recommend`;
+ALTER TABLE `restaurant` ADD `delivery_fee` INT UNSIGNED NULL AFTER `is_free`;
+
+ALTER TABLE `driver_owe_amount` ADD `restaurant_id` INT UNSIGNED NOT NULL AFTER `user_id`;
+
+<><><>LIVE UPDATE<><><>
+
+----------------------------------------------------------------------------------
+NEXT SPRINT
+----------------------------------------------------------------------------------
+
+ALTER TABLE `cuisine` ADD `home_page` TINYINT NULL AFTER `most_popular`;
+ALTER TABLE `restaurant` ADD `delivery_mode` VARCHAR(3) NULL AFTER `price_rating`;
+ALTER TABLE `order` ADD `delivery_mode` ENUM('1','2') NOT NULL DEFAULT '2' AFTER `payout_status`;
+ALTER TABLE `user_address` ADD `delivery_mode` ENUM('1','2') NOT NULL DEFAULT '2' AFTER `order_type`;
+
+----------------------------------------------------------------------------------
