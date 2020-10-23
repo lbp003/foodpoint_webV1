@@ -37148,9 +37148,9 @@ if (token) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /opt/lampp/htdocs/client/foodpoint/resources/assets/js/app.js */"./resources/assets/js/app.js");
-__webpack_require__(/*! /opt/lampp/htdocs/client/foodpoint/resources/assets/sass/common.scss */"./resources/assets/sass/common.scss");
-module.exports = __webpack_require__(/*! /opt/lampp/htdocs/client/foodpoint/resources/assets/sass/admin/common.scss */"./resources/assets/sass/admin/common.scss");
+__webpack_require__(/*! /home/vagrant/code/foodpoint/resources/assets/js/app.js */"./resources/assets/js/app.js");
+__webpack_require__(/*! /home/vagrant/code/foodpoint/resources/assets/sass/common.scss */"./resources/assets/sass/common.scss");
+module.exports = __webpack_require__(/*! /home/vagrant/code/foodpoint/resources/assets/sass/admin/common.scss */"./resources/assets/sass/admin/common.scss");
 
 
 /***/ })

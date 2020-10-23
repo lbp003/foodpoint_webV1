@@ -1,5 +1,7 @@
 <?php
 
+// File generated from our OpenAPI spec
+
 namespace Stripe\Service;
 
 class ProductService extends \Stripe\Service\AbstractService
@@ -17,7 +19,7 @@ class ProductService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->request('get', '/v1/products', $params, $opts);
+        return $this->requestCollection('get', '/v1/products', $params, $opts);
     }
 
     /**
@@ -36,10 +38,9 @@ class ProductService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * Delete a product. Deleting a product with type=<code>good</code> is only
-     * possible if it has no SKUs associated with it. Deleting a product with
-     * type=<code>service</code> is only possible if it has no plans associated with
-     * it.
+     * Delete a product. Deleting a product is only possible if it has no prices
+     * associated with it. Additionally, deleting a product with <code>type=good</code>
+     * is only possible if it has no SKUs associated with it.
      *
      * @param string $id
      * @param null|array $params

@@ -43,23 +43,25 @@ abstract class AbstractService
     private static function formatParams($params)
     {
         if (null === $params) {
-            return $params;
+            return null;
         }
-        $formatted = [];
-        foreach ($params as $k => $v) {
-            if (null === $v) {
-                $formatted[$k] = '';
-            } else {
-                $formatted[$k] = $v;
+        \array_walk_recursive($params, function (&$value, $key) {
+            if (null === $value) {
+                $value = '';
             }
-        }
+        });
 
-        return $formatted;
+        return $params;
     }
 
     protected function request($method, $path, $params, $opts)
     {
         return $this->getClient()->request($method, $path, static::formatParams($params), $opts);
+    }
+
+    protected function requestCollection($method, $path, $params, $opts)
+    {
+        return $this->getClient()->requestCollection($method, $path, static::formatParams($params), $opts);
     }
 
     protected function buildPath($basePath, ...$ids)
