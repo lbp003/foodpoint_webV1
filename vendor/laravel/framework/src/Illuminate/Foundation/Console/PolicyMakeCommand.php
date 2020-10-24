@@ -68,22 +68,6 @@ class PolicyMakeCommand extends GeneratorCommand
     }
 
     /**
-     * Get the model for the guard's user provider.
-     *
-     * @return string|null
-     */
-    protected function userProviderModel()
-    {
-        $config = $this->laravel['config'];
-
-        $guard = $this->option('guard') ?: $config->get('auth.defaults.guard');
-
-        return $config->get(
-            'auth.providers.'.$config->get('auth.guards.'.$guard.'.provider').'.model'
-        );
-    }
-
-    /**
      * Replace the model for the given stub.
      *
      * @param  string  $stub
@@ -176,7 +160,6 @@ class PolicyMakeCommand extends GeneratorCommand
     {
         return [
             ['model', 'm', InputOption::VALUE_OPTIONAL, 'The model that the policy applies to'],
-            ['guard', 'g', InputOption::VALUE_OPTIONAL, 'The guard that the policy relies on'],
         ];
     }
 }

@@ -38,15 +38,15 @@ use App\Models\RestaurantTime;
 use App\Models\User;
 use App\Models\UserAddress;
 use App\Traits\FileProcessing;
-use Auth;
-use DB;
+// use Auth;
+// use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Mail;
-use Session;
+// use Session;
 use Storage;
 use Stripe;
-use Validator;
+// use Validator;
 use App\Models\MenuTranslations;
 use App\Models\MenuCategoryTranslations;
 use App\Models\MenuItemTranslations;
@@ -56,6 +56,11 @@ use App\Charts\BasicChart;
 
 use App\Models\DriverOweAmount;
 use App\Models\Order;
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class RestaurantController extends Controller
 {
@@ -311,11 +316,11 @@ class RestaurantController extends Controller
 		$total_order = (clone $retaurant_order)->whereNotIn('status', ['1', '0'])->count('id');
 		$data['accepted_rating'] = 0;
 		$data['canceled_rating'] = 0;
-		$accepted_order = (clone $retaurant_order)->where('accepted_at', '!=', '')->count('id');
+		$accepted_order = (clone $retaurant_order)->where('accepted_at', '!=', null)->count('id');
 		if ($total_order > 0) {
 			$data['accepted_rating'] = round(($accepted_order / $total_order) * 100);
 		}
-		$canceled_order = (clone $retaurant_order)->where('cancelled_at', '!=', '')->count('id');
+		$canceled_order = (clone $retaurant_order)->where('cancelled_at', '!=', null)->count('id');
 		if ($total_order > 0) {
 			$data['canceled_rating'] = round(($canceled_order / $total_order) * 100);
 		}

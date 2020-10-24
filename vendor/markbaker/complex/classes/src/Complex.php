@@ -376,12 +376,12 @@ class Complex
         $functionName = strtolower(str_replace('_', '', $functionName));
 
         // Test for function calls
-        if (in_array($functionName, self::$functions, true)) {
+        if (in_array($functionName, self::$functions)) {
             $functionName = "\\" . __NAMESPACE__ . "\\{$functionName}";
             return $functionName($this, ...$arguments);
         }
         // Test for operation calls
-        if (in_array($functionName, self::$operations, true)) {
+        if (in_array($functionName, self::$operations)) {
             $functionName = "\\" . __NAMESPACE__ . "\\{$functionName}";
             return $functionName($this, ...$arguments);
         }

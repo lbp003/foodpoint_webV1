@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service;
 
 /**
@@ -30,7 +28,6 @@ namespace Stripe\Service;
  * @property InvoiceService $invoices
  * @property Issuing\IssuingServiceFactory $issuing
  * @property MandateService $mandates
- * @property OAuthService $oauth
  * @property OrderReturnService $orderReturns
  * @property OrderService $orders
  * @property PaymentIntentService $paymentIntents
@@ -39,7 +36,6 @@ namespace Stripe\Service;
  * @property PlanService $plans
  * @property PriceService $prices
  * @property ProductService $products
- * @property PromotionCodeService $promotionCodes
  * @property Radar\RadarServiceFactory $radar
  * @property RefundService $refunds
  * @property Reporting\ReportingServiceFactory $reporting
@@ -87,7 +83,6 @@ class CoreServiceFactory extends \Stripe\Service\AbstractServiceFactory
         'invoices' => InvoiceService::class,
         'issuing' => Issuing\IssuingServiceFactory::class,
         'mandates' => MandateService::class,
-        'oauth' => OAuthService::class,
         'orderReturns' => OrderReturnService::class,
         'orders' => OrderService::class,
         'paymentIntents' => PaymentIntentService::class,
@@ -96,7 +91,6 @@ class CoreServiceFactory extends \Stripe\Service\AbstractServiceFactory
         'plans' => PlanService::class,
         'prices' => PriceService::class,
         'products' => ProductService::class,
-        'promotionCodes' => PromotionCodeService::class,
         'radar' => Radar\RadarServiceFactory::class,
         'refunds' => RefundService::class,
         'reporting' => Reporting\ReportingServiceFactory::class,

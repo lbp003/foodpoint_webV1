@@ -2,10 +2,6 @@
 
 ## [Unreleased]
 
-## [v1.22.0] - 2020-09-09
-
-- Add support for Laravel 8.
-
 ## [v1.21.0] - 2020-04-02
 
 - Include the action performed by the editor on json response.
@@ -184,8 +180,7 @@ Rule::unique($model->getTable())
 - CRUD pre / post events hooks.
 - Artisan command for DataTables Editor generation.
 
-[Unreleased]: https://github.com/yajra/laravel-datatables-editor/compare/v1.22.0...master
-[v1.22.0]: https://github.com/yajra/laravel-datatables-editor/compare/v1.21.0...v1.22.0
+[Unreleased]: https://github.com/yajra/laravel-datatables-editor/compare/v1.21.0...master
 [v1.21.0]: https://github.com/yajra/laravel-datatables-editor/compare/v1.20.0...v1.21.0
 [v1.20.0]: https://github.com/yajra/laravel-datatables-editor/compare/v1.19.0...v1.20.0
 [v1.19.0]: https://github.com/yajra/laravel-datatables-editor/compare/v1.18.0...v1.19.0

@@ -1,13 +1,11 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service\BillingPortal;
 
 class SessionService extends \Stripe\Service\AbstractService
 {
     /**
-     * Creates a session of the customer portal.
+     * Creates a session of the self-serve Portal.
      *
      * @param null|array $params
      * @param null|array|\Stripe\Util\RequestOptions $opts

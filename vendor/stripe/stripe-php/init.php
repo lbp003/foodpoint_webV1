@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 // Stripe singleton
 require __DIR__ . '/lib/Stripe.php';
 
@@ -124,7 +122,6 @@ require __DIR__ . '/lib/Person.php';
 require __DIR__ . '/lib/Plan.php';
 require __DIR__ . '/lib/Price.php';
 require __DIR__ . '/lib/Product.php';
-require __DIR__ . '/lib/PromotionCode.php';
 require __DIR__ . '/lib/Radar/EarlyFraudWarning.php';
 require __DIR__ . '/lib/Radar/ValueList.php';
 require __DIR__ . '/lib/Radar/ValueListItem.php';
@@ -192,7 +189,6 @@ require __DIR__ . '/lib/Service/PayoutService.php';
 require __DIR__ . '/lib/Service/PlanService.php';
 require __DIR__ . '/lib/Service/PriceService.php';
 require __DIR__ . '/lib/Service/ProductService.php';
-require __DIR__ . '/lib/Service/PromotionCodeService.php';
 require __DIR__ . '/lib/Service/Radar/EarlyFraudWarningService.php';
 require __DIR__ . '/lib/Service/Radar/ValueListService.php';
 require __DIR__ . '/lib/Service/Radar/ValueListItemService.php';
@@ -229,7 +225,6 @@ require __DIR__ . '/lib/Service/Terminal/TerminalServiceFactory.php';
 // OAuth
 require __DIR__ . '/lib/OAuth.php';
 require __DIR__ . '/lib/OAuthErrorObject.php';
-require __DIR__ . '/lib/Service/OAuthService.php';
 
 // Webhooks
 require __DIR__ . '/lib/Webhook.php';

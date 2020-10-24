@@ -45,9 +45,9 @@ return [
              // 'unix_socket'   => '/opt/lampp/var/mysql/mysql.sock', // Don't need for live
             //'unix_socket'   => '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock', // Don't need for live
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'foodpoint'),
-            'username' => env('DB_USERNAME', 'homestead'),
-            'password' => env('DB_PASSWORD', 'secret'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',

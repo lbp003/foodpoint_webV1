@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service;
 
 class ApplicationFeeService extends \Stripe\Service\AbstractService
@@ -19,7 +17,7 @@ class ApplicationFeeService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/application_fees', $params, $opts);
+        return $this->request('get', '/v1/application_fees', $params, $opts);
     }
 
     /**
@@ -39,7 +37,7 @@ class ApplicationFeeService extends \Stripe\Service\AbstractService
      */
     public function allRefunds($parentId, $params = null, $opts = null)
     {
-        return $this->requestCollection('get', $this->buildPath('/v1/application_fees/%s/refunds', $parentId), $params, $opts);
+        return $this->request('get', $this->buildPath('/v1/application_fees/%s/refunds', $parentId), $params, $opts);
     }
 
     /**

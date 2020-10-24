@@ -79,18 +79,19 @@ class Collection extends BaseCollection implements QueueableCollection
             ->whereKey($this->modelKeys())
             ->select($this->first()->getKeyName())
             ->withCount(...func_get_args())
-            ->get()
-            ->keyBy($this->first()->getKeyName());
+            ->get();
 
         $attributes = Arr::except(
             array_keys($models->first()->getAttributes()),
             $models->first()->getKeyName()
         );
 
-        $this->each(function ($model) use ($models, $attributes) {
-            $extraAttributes = Arr::only($models->get($model->getKey())->getAttributes(), $attributes);
-
-            $model->forceFill($extraAttributes)->syncOriginalAttributes($attributes);
+        $models->each(function ($model) use ($attributes) {
+            $this->where($this->first()->getKeyName(), $model->getKey())
+                ->each
+                ->forceFill(Arr::only($model->getAttributes(), $attributes))
+                ->each
+                ->syncOriginalAttributes($attributes);
         });
 
         return $this;
@@ -357,7 +358,7 @@ class Collection extends BaseCollection implements QueueableCollection
      *
      * @param  string|callable|null  $key
      * @param  bool  $strict
-     * @return static
+     * @return static|\Illuminate\Support\Collection
      */
     public function unique($key = null, $strict = false)
     {
@@ -627,31 +628,5 @@ class Collection extends BaseCollection implements QueueableCollection
         });
 
         return $connection;
-    }
-
-    /**
-     * Get the Eloquent query builder from the collection.
-     *
-     * @return \Illuminate\Database\Eloquent\Builder
-     *
-     * @throws \LogicException
-     */
-    public function toQuery()
-    {
-        $model = $this->first();
-
-        if (! $model) {
-            throw new LogicException('Unable to create query for empty collection.');
-        }
-
-        $class = get_class($model);
-
-        if ($this->filter(function ($model) use ($class) {
-            return ! $model instanceof $class;
-        })->isNotEmpty()) {
-            throw new LogicException('Unable to create query for collection with mixed types.');
-        }
-
-        return $model->newModelQuery()->whereKey($this->modelKeys());
     }
 }

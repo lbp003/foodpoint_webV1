@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service;
 
 class ApplePayDomainService extends \Stripe\Service\AbstractService
@@ -18,7 +16,7 @@ class ApplePayDomainService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/apple_pay/domains', $params, $opts);
+        return $this->request('get', '/v1/apple_pay/domains', $params, $opts);
     }
 
     /**

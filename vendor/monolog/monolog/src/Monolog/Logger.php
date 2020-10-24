@@ -140,8 +140,6 @@ class Logger implements LoggerInterface, ResettableInterface
     protected $exceptionHandler;
 
     /**
-     * @psalm-param array<callable(array): array> $processors
-     *
      * @param string             $name       The logging channel, a simple descriptive name that is attached to all log records
      * @param HandlerInterface[] $handlers   Optional stack of handlers, the first one in the array is called first, etc.
      * @param callable[]         $processors Optional array of processors
@@ -312,7 +310,7 @@ class Logger implements LoggerInterface, ResettableInterface
 
         try {
             foreach ($this->processors as $processor) {
-                $record = $processor($record);
+                $record = call_user_func($processor, $record);
             }
 
             // advance the array pointer to the first handler that will handle this record
@@ -610,6 +608,6 @@ class Logger implements LoggerInterface, ResettableInterface
             throw $e;
         }
 
-        ($this->exceptionHandler)($e, $record);
+        call_user_func($this->exceptionHandler, $e, $record);
     }
 }

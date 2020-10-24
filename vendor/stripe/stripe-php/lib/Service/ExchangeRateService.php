@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service;
 
 class ExchangeRateService extends \Stripe\Service\AbstractService
@@ -19,7 +17,7 @@ class ExchangeRateService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/exchange_rates', $params, $opts);
+        return $this->request('get', '/v1/exchange_rates', $params, $opts);
     }
 
     /**

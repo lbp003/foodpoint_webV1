@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service\Issuing;
 
 class AuthorizationService extends \Stripe\Service\AbstractService
@@ -20,7 +18,7 @@ class AuthorizationService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/issuing/authorizations', $params, $opts);
+        return $this->request('get', '/v1/issuing/authorizations', $params, $opts);
     }
 
     /**

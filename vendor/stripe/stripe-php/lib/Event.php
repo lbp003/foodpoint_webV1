@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe;
 
 /**
@@ -26,7 +24,7 @@ namespace Stripe;
  * We also have a separate <a
  * href="http://en.wikipedia.org/wiki/Webhook">webhooks</a> system for sending the
  * <code>Event</code> objects directly to an endpoint on your server. Webhooks are
- * managed in your <a href="https://dashboard.stripe.com/account/webhooks">account
+ * managed in your <a href="https://dashboard.stripe.com/account/webhooks'">account
  * settings</a>, and our <a href="https://stripe.com/docs/webhooks">Using
  * Webhooks</a> guide will help you get set up.
  *
@@ -85,8 +83,6 @@ class Event extends ApiResource
     const CHARGE_DISPUTE_FUNDS_WITHDRAWN = 'charge.dispute.funds_withdrawn';
     const CHARGE_DISPUTE_UPDATED = 'charge.dispute.updated';
     const CHARGE_REFUND_UPDATED = 'charge.refund.updated';
-    const CHECKOUT_SESSION_ASYNC_PAYMENT_FAILED = 'checkout.session.async_payment_failed';
-    const CHECKOUT_SESSION_ASYNC_PAYMENT_SUCCEEDED = 'checkout.session.async_payment_succeeded';
     const CHECKOUT_SESSION_COMPLETED = 'checkout.session.completed';
     const COUPON_CREATED = 'coupon.created';
     const COUPON_DELETED = 'coupon.deleted';
@@ -113,7 +109,6 @@ class Event extends ApiResource
     const INVOICE_DELETED = 'invoice.deleted';
     const INVOICE_FINALIZED = 'invoice.finalized';
     const INVOICE_MARKED_UNCOLLECTIBLE = 'invoice.marked_uncollectible';
-    const INVOICE_PAID = 'invoice.paid';
     const INVOICE_PAYMENT_ACTION_REQUIRED = 'invoice.payment_action_required';
     const INVOICE_PAYMENT_FAILED = 'invoice.payment_failed';
     const INVOICE_PAYMENT_SUCCEEDED = 'invoice.payment_succeeded';
@@ -133,7 +128,6 @@ class Event extends ApiResource
     const ISSUING_CARDHOLDER_CREATED = 'issuing_cardholder.created';
     const ISSUING_CARDHOLDER_UPDATED = 'issuing_cardholder.updated';
     const ISSUING_DISPUTE_CREATED = 'issuing_dispute.created';
-    const ISSUING_DISPUTE_FUNDS_REINSTATED = 'issuing_dispute.funds_reinstated';
     const ISSUING_DISPUTE_UPDATED = 'issuing_dispute.updated';
     const ISSUING_TRANSACTION_CREATED = 'issuing_transaction.created';
     const ISSUING_TRANSACTION_UPDATED = 'issuing_transaction.updated';
@@ -163,9 +157,6 @@ class Event extends ApiResource
     const PLAN_CREATED = 'plan.created';
     const PLAN_DELETED = 'plan.deleted';
     const PLAN_UPDATED = 'plan.updated';
-    const PRICE_CREATED = 'price.created';
-    const PRICE_DELETED = 'price.deleted';
-    const PRICE_UPDATED = 'price.updated';
     const PRODUCT_CREATED = 'product.created';
     const PRODUCT_DELETED = 'product.deleted';
     const PRODUCT_UPDATED = 'product.updated';

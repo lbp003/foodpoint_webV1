@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service;
 
 class CountrySpecService extends \Stripe\Service\AbstractService
@@ -18,7 +16,7 @@ class CountrySpecService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/country_specs', $params, $opts);
+        return $this->request('get', '/v1/country_specs', $params, $opts);
     }
 
     /**

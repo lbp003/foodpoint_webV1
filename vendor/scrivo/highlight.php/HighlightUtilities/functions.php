@@ -175,8 +175,7 @@ function splitCodeIntoArray($html)
 
     $dom = new \DOMDocument();
 
-    // https://stackoverflow.com/a/8218649
-    if (!$dom->loadHTML(mb_convert_encoding($html, 'HTML-ENTITIES', 'UTF-8'))) {
+    if (!$dom->loadHTML($html)) {
         throw new \UnexpectedValueException("The given HTML could not be parsed correctly.");
     }
 
@@ -187,9 +186,9 @@ function splitCodeIntoArray($html)
         $classes = $span->getAttribute("class");
         $renderedSpan = $dom->saveHTML($span);
 
-        if (preg_match('/\R/u', $renderedSpan)) {
+        if (preg_match('/\R/', $renderedSpan)) {
             $finished = preg_replace(
-                '/\R/u',
+                '/\R/',
                 sprintf('</span>%s<span class="%s">', PHP_EOL, $classes),
                 $renderedSpan
             );
@@ -197,5 +196,5 @@ function splitCodeIntoArray($html)
         }
     }
 
-    return preg_split('/\R/u', $html);
+    return preg_split('/\R/', $html);
 }

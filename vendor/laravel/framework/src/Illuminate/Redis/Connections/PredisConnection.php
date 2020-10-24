@@ -9,6 +9,7 @@ use Predis\Connection\Aggregate\ClusterInterface;
 
 /**
  * @mixin \Predis\Client
+ * @deprecated Predis is no longer maintained by its original author
  */
 class PredisConnection extends Connection implements ConnectionContract
 {

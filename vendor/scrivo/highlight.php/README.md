@@ -66,7 +66,7 @@ catch (DomainException $e) {
     // This is thrown if the specified language does not exist
 
     echo "<pre><code>";
-    echo htmlentities($code);
+    echo $code;
     echo "</code></pre>";
 }
 ```

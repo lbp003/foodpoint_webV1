@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe;
 
 /**
@@ -30,7 +28,6 @@ namespace Stripe;
  * @property \Stripe\Service\InvoiceService $invoices
  * @property \Stripe\Service\Issuing\IssuingServiceFactory $issuing
  * @property \Stripe\Service\MandateService $mandates
- * @property \Stripe\Service\OAuthService $oauth
  * @property \Stripe\Service\OrderReturnService $orderReturns
  * @property \Stripe\Service\OrderService $orders
  * @property \Stripe\Service\PaymentIntentService $paymentIntents
@@ -39,7 +36,6 @@ namespace Stripe;
  * @property \Stripe\Service\PlanService $plans
  * @property \Stripe\Service\PriceService $prices
  * @property \Stripe\Service\ProductService $products
- * @property \Stripe\Service\PromotionCodeService $promotionCodes
  * @property \Stripe\Service\Radar\RadarServiceFactory $radar
  * @property \Stripe\Service\RefundService $refunds
  * @property \Stripe\Service\Reporting\ReportingServiceFactory $reporting

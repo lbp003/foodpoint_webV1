@@ -87,6 +87,7 @@ final class Uninflected
         yield new Pattern('emoji');
         yield new Pattern('equipment');
         yield new Pattern('evidence');
+        yield new Pattern('experience');
         yield new Pattern('faroese');
         yield new Pattern('feedback');
         yield new Pattern('fish');
@@ -188,6 +189,7 @@ final class Uninflected
         yield new Pattern('wildebeest');
         yield new Pattern('wood');
         yield new Pattern('wool');
+        yield new Pattern('work');
         yield new Pattern('yengeese');
     }
 }

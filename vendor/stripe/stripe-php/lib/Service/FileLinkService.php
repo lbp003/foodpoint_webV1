@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service;
 
 class FileLinkService extends \Stripe\Service\AbstractService
@@ -18,7 +16,7 @@ class FileLinkService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/file_links', $params, $opts);
+        return $this->request('get', '/v1/file_links', $params, $opts);
     }
 
     /**

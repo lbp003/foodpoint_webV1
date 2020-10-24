@@ -230,7 +230,13 @@ class DumpDataCollector extends DataCollector implements DataDumperInterface
                 --$i;
             }
 
-            if (!\in_array(\PHP_SAPI, ['cli', 'phpdbg'], true) && stripos($h[$i], 'html')) {
+            if (isset($_SERVER['VAR_DUMPER_FORMAT'])) {
+                $html = 'html' === $_SERVER['VAR_DUMPER_FORMAT'];
+            } else {
+                $html = !\in_array(\PHP_SAPI, ['cli', 'phpdbg'], true) && stripos($h[$i], 'html');
+            }
+
+            if ($html) {
                 $dumper = new HtmlDumper('php://output', $this->charset);
                 $dumper->setDisplayOptions(['fileLinkFormat' => $this->fileLinkFormat]);
             } else {

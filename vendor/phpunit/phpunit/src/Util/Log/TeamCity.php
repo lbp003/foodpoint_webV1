@@ -48,7 +48,7 @@ final class TeamCity extends ResultPrinter
      */
     public function printResult(TestResult $result): void
     {
-        $this->printHeader($result);
+        $this->printHeader();
         $this->printFooter($result);
     }
 

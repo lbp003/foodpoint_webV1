@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service;
 
 class RefundService extends \Stripe\Service\AbstractService
@@ -21,7 +19,7 @@ class RefundService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/refunds', $params, $opts);
+        return $this->request('get', '/v1/refunds', $params, $opts);
     }
 
     /**

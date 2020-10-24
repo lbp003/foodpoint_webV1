@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service\Terminal;
 
 class LocationService extends \Stripe\Service\AbstractService
@@ -18,7 +16,7 @@ class LocationService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/terminal/locations', $params, $opts);
+        return $this->request('get', '/v1/terminal/locations', $params, $opts);
     }
 
     /**

@@ -31,6 +31,7 @@ class MakeViewVariableOptionalSolution implements RunnableSolution
 
     public function getSolutionActionDescription(): string
     {
+        $path = str_replace(base_path().'/', '', $this->viewFile);
         $output = [
             'Make the variable optional in the blade template.',
             "Replace `{{ $$this->variableName }}` with `{{ $$this->variableName ?? '' }}`",
@@ -90,7 +91,7 @@ class MakeViewVariableOptionalSolution implements RunnableSolution
     protected function generateExpectedTokens(array $originalTokens, string $variableName): array
     {
         $expectedTokens = [];
-        foreach ($originalTokens as $token) {
+        foreach ($originalTokens as $key => $token) {
             $expectedTokens[] = $token;
             if ($token[0] === T_VARIABLE && $token[1] === '$'.$variableName) {
                 $expectedTokens[] = [T_WHITESPACE, ' ', $token[2]];

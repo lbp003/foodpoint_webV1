@@ -1,7 +1,5 @@
 <?php
 
-// File generated from our OpenAPI spec
-
 namespace Stripe\Service;
 
 class SubscriptionScheduleService extends \Stripe\Service\AbstractService
@@ -18,7 +16,7 @@ class SubscriptionScheduleService extends \Stripe\Service\AbstractService
      */
     public function all($params = null, $opts = null)
     {
-        return $this->requestCollection('get', '/v1/subscription_schedules', $params, $opts);
+        return $this->request('get', '/v1/subscription_schedules', $params, $opts);
     }
 
     /**
@@ -41,7 +39,7 @@ class SubscriptionScheduleService extends \Stripe\Service\AbstractService
     }
 
     /**
-     * Creates a new subscription schedule object. Each customer can have up to 500
+     * Creates a new subscription schedule object. Each customer can have up to 25
      * active or scheduled subscriptions.
      *
      * @param null|array $params

@@ -13,7 +13,7 @@ namespace League\CommonMark\Extension\TableOfContents\Normalizer;
 
 use League\CommonMark\Block\Element\ListBlock;
 use League\CommonMark\Block\Element\ListItem;
-use League\CommonMark\Extension\TableOfContents\Node\TableOfContents;
+use League\CommonMark\Extension\TableOfContents\TableOfContents;
 
 final class RelativeNormalizerStrategy implements NormalizerStrategyInterface
 {
@@ -60,6 +60,3 @@ final class RelativeNormalizerStrategy implements NormalizerStrategyInterface
         $this->listItemStack[$level] = $listItemToAdd;
     }
 }
-
-// Trigger autoload without causing a deprecated error
-\class_exists(TableOfContents::class);
