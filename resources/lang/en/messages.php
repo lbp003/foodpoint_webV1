@@ -541,7 +541,8 @@ return [
         'business_name'=>'Business Name',
         'business_tax_id'=>'Business Tax Id',
         'holder_type'=>'Holder Type',
-        'stripe_token'=>'Stripe Token',
+		'stripe_token'=>'Stripe Token',
+		'order_history'=>'Order History',
 	],
 	
 	'svg' => [

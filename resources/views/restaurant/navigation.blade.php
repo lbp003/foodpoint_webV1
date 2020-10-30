@@ -43,6 +43,12 @@
 				<span>{{ trans('messages.restaurant_dashboard.timings') }}</span>
 			</a>
 		</li>
+		<li class="{{navigation_active('restaurant.order_history') ? 'active':''}}">
+			<a href="{{route('restaurant.order_history')}}">
+				<i class="icon icon-clock"></i>
+				<span>{{ trans('messages.restaurant_dashboard.order_history') }}</span>
+			</a>
+		</li>
 
 		@if(isset($static_pages))
 		<!-- 	<li>

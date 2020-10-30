@@ -1,5 +1,5 @@
 <?php
-
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Restaurant Routes
@@ -73,5 +73,7 @@ Route::group(['middleware' => ['clear_cache', 'auth:restaurant','locale']], func
 	Route::post('update_documents', 'ProfileController@update_documents')->name('update_documents');
 	Route::match(array('GET', 'POST'), 'show_comments', 'ProfileController@show_comments')->name('show_comments');
 	Route::match(array('GET', 'POST'), 'status_update', 'ProfileController@status_update')->name('status_update');
+
+	Route::match(array('GET', 'POST'), 'order_history', 'RestaurantController@orderHistory')->name('order_history');
 
 });

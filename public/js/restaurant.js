@@ -1636,3 +1636,5 @@ app.controller('profile', ['$scope','$http','$timeout','$filter',function($scope
 		return false;
 	};
 }]);
+app.controller('order_history', ['$scope','$http','$timeout','$filter',function($scope,$http,$timeout,$filter) {
+}]);

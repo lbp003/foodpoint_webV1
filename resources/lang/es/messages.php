@@ -529,7 +529,8 @@ return [
         'business_name' => 'Nombre del Negocio',
         'business_tax_id' => 'Comercial Rut',
         'holder_type' => 'Tipo titular',
-        'stripe_token' => 'raya de emergencia',
+		'stripe_token' => 'raya de emergencia',
+		'order_history'=>'Historial de pedidos'
 	],
 	
 	'svg' =>[

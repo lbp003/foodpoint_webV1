@@ -533,7 +533,8 @@ Eu também concordo que :site_name ou seus representantes podem entrar em contat
         'business_tax_id' => 'Negócios Tax Id',
         'holder_type' => 'Tipo de titular',
         'stripe_token' => 'Stripe token',
-        'driver' => 'Motorista'
+		'driver' => 'Motorista',
+		'order_history'=>'Histórico de pedidos'
 	],
 	
 	'svg' => [

@@ -1134,7 +1134,7 @@ class RestaurantController extends Controller
 	}
 
 	/**
-	Payout details page
+	* Payout details page
 	*/
 	public function payout_preference()
 	{
@@ -1258,7 +1258,7 @@ class RestaurantController extends Controller
 	}
 
 	/**
-	Payout daywise details page
+	* Payout daywise details page
 	*/
 	public function payout_daywise_details()
 	{
@@ -1641,5 +1641,38 @@ class RestaurantController extends Controller
 			->get();
 			
 		return $review;
+	}
+
+	/**
+	 * Order History module
+	 */
+	public function orderHistory(Request $request) {
+
+		$restaurant_id = get_current_restaurant_id();
+		
+		$orders = new Order();
+
+		$data['order_history'] = Order::where('restaurant_id', $restaurant_id)
+			->history(['cancelled', 'completed'])
+			->orderBy('id', 'Desc')
+			->get();
+
+			foreach ($data['order_history'] as $key => $val){
+
+				$val['id_text'] = "#10".$val['id'];
+
+				if($val['status'] ===  $orders->statusArray['completed']){
+					$val['status_text'] = trans('messages.profile_orders.completed');
+					$val['order_time'] = $val['completed_at']->format('Y-m-d h:i').trans('api_messages.monthandtime.'.$val['completed_at']->format('a'));
+				}else{
+					$val['status_text'] = trans('messages.profile_orders.cancelled');
+					$val['order_time'] = $val['updated_at']->format('Y-m-d h:i').trans('api_messages.monthandtime.'.$val['updated_at']->format('a'));
+				}
+
+				$val['total_amount_text'] = html_entity_decode(currency_symbol() . ($val['total_amount']+$val['wallet_amount']));
+			}
+
+
+		return view('restaurant.order_history', $data);
 	}
 }

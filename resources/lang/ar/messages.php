@@ -455,7 +455,8 @@ return [
         'business_name'=>'الاسم التجاري',
         'business_tax_id'=>'رقم تعريف ضريبة العمل',
         'holder_type'=>'نوع حامل',
-        'stripe_token'=>'شريط الرمز',
+		'stripe_token'=>'شريط الرمز',
+		'order_history'=>'تاريخ الطلب'
 	],
 	'profile_orders' => [
 		'submit'=>'خضع',
